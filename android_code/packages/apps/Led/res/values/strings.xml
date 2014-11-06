@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">LedServiceTest</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="led01_on">Led01 On</string>
+    <string name="led01_off">Led01 Off</string>
+
+</resources>

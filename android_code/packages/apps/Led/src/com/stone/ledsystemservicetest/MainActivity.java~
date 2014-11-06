@@ -1,0 +1,47 @@
+package com.stone.ledsystemservicetest;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.content.Context;
+import android.view.View;
+import android.widget.Button;
+import stone.hardware.led.LedManager;
+import com.stone.server.LedService;
+import android.util.Log;
+
+public class MainActivity extends Activity {
+	private static final String TAG = "LedServiceTest";
+	private LedManager mLedManager = null;
+	private Button mLed01OnBtn = null;
+	private Button mLed01OffBtn = null;
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		mLedManager = (LedManager) getSystemService(Context.LED_SERVICE);
+		mLed01OnBtn = (Button) findViewById(R.id.btnLed01On);
+		mLed01OffBtn = (Button) findViewById(R.id.btnLed01Off);
+		mLed01OnBtn.setOnClickListener(new Button.OnClickListener(){
+
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				Log.i(TAG, "Call ledOn()!");
+				mLedManager.ledOn(1);
+			}
+			
+		});
+		mLed01OffBtn.setOnClickListener(new Button.OnClickListener(){
+
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				Log.i(TAG, "Call ledOff()!");
+				mLedManager.ledOff(1);
+			}
+			
+		});
+	}
+
+
+}
